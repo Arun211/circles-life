@@ -1,7 +1,7 @@
 package com.circles.automation.tests;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 
 import org.apache.log4j.Logger;
 import org.circles.automation.browserutils.BrowserFactory;
@@ -17,7 +17,7 @@ import com.circles.facebook.pages.FacebookAppUserHomePage;
 public class FacebookAppPostVerifyTest {
 	private static final Logger LOGGER = Logger.getLogger(FacebookAppPostVerifyTest.class);
 
-	private AndroidDriver<MobileElement> driver = null;
+	private AppiumDriver<MobileElement> driver = null;
 	
 	public FacebookAppLoginPage facebookAppLoginPage;
 	public FacebookAppUserHomePage  facebookAppUserHomePage;
@@ -62,9 +62,10 @@ public class FacebookAppPostVerifyTest {
 	@Test(dataProvider="getLoginCredentials")
 	public void verifyPostInFacebookApp(String email, String password, String postMessage) throws Exception {
 		facebookAppLoginPage.loginToFacebook(email, password);
-		Assert.assertTrue(facebookAppUserHomePage.isUserLoggedIn(), "User not logged in, profile picture not displayed.");
 		
-		Assert.assertTrue(facebookAppUserHomePage.verifyPost(postMessage));
+		Assert.assertTrue(facebookAppUserHomePage.isUserLoggedIn(), "User not logged in, write post section not displayed.");
+		
+		Assert.assertTrue(facebookAppUserHomePage.verifyPost(postMessage), "Post is not displayed");
 	}
 	
 	/**
