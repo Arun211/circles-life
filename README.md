@@ -13,3 +13,18 @@ Test tasks repository to hold source for below scenarios
 Maven can be used to execute test scripts standalone and from CI pipeline
 
 TestNG provides core keywords. Test execution can be started using TestNG test suite as well.
+
+#### Cross Browser Testing support
+
+##### Supported Browser:
+Chrome Browser
+Firefox Browser
+Android App
+
+Test execution logs will be captured in /Result/TestExecution.log file.
+
+Application url under test can be changed from AUT_Conf.properties file. Helps to execute tests in different environents.
+
+SeleniumUtil and SeleniumAndroidUtil classes to maintain reusable scripts.
+
+BrowserFactory - One place to create browser objects 
