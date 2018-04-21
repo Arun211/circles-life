@@ -1,5 +1,10 @@
 package org.circles.automation.browserutils;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 import org.circles.automation.utils.ReadProperty;
@@ -45,8 +50,6 @@ public class BrowserFactory {
 			case "chrome":
 			case "googlechrome":
 				return createChromeDriver();
-			case "android":
-				return createAndroidDriver();
 			default:
 				return null;
 		}
@@ -90,8 +93,25 @@ public class BrowserFactory {
 	 *
 	 * @return the Android webdriver
 	 */
-	private static WebDriver createAndroidDriver() {
-		WebDriver driver = new AndroidDriver(DesiredCapabilities.android());
+	public static AndroidDriver<MobileElement> createAndroidDriver() {
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("automationName","Appium");
+		capabilities.setCapability("deviceName", "Nothing Found");
+		capabilities.setCapability("platformVersion", "6.0.1");
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("noReset", true);
+		capabilities.setCapability("appPackage", "com.facebook.katana");
+		capabilities.setCapability("appActivity", "com.facebook.katana.LoginActivity");
+		
+		AndroidDriver<MobileElement> driver = null;
+		
+		try {
+			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		} catch(MalformedURLException malformedURLException) {
+			malformedURLException.printStackTrace();
+		}
+		
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		return driver;
 	}
 }
