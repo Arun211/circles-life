@@ -1,5 +1,6 @@
 package com.circles.automation.tests;
 
+import org.apache.log4j.Logger;
 import org.circles.automation.browserutils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -18,6 +19,7 @@ import com.circles.automation.pages.UserHomePage;
  * The Class CirclesEmailVerificationTests.
  */
 public class CirclesEmailVerificationTests {
+	private static final Logger LOGGER = Logger.getLogger(CirclesEmailVerificationTests.class);
 	
 	public WebDriver driver;
 	
@@ -84,7 +86,7 @@ public class CirclesEmailVerificationTests {
 		try {
 			driver.quit();
 		} catch(Exception exception) {
-			
+			LOGGER.error("Exception while closing browser driver after test execution -"+exception.getMessage());
 		}
 	}
 }

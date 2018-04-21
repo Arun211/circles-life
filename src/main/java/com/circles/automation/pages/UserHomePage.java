@@ -1,5 +1,6 @@
 package com.circles.automation.pages;
 
+import org.apache.log4j.Logger;
 import org.circles.automation.browserutils.Locator;
 import org.circles.automation.browserutils.SeleniumUtil;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
  * Note - Comments for locator object is given in Locator object initialization
  */
 public class UserHomePage {
+	private static final Logger LOGGER = Logger.getLogger(UserHomePage.class);
 	
 	private WebDriver driver;
 	private SeleniumUtil seleniumUtil;
@@ -51,7 +53,7 @@ public class UserHomePage {
 			seleniumUtil.waitForElementToBeDisplayed(myaccountLink, 15);
 			seleniumUtil.click(myaccountLink);
 		} catch(Exception exception) {
-			exception.printStackTrace();
+			LOGGER.error("Exception while navigating to My Account - "+exception.getMessage());
 		}
 	}
 	

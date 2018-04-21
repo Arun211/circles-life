@@ -4,12 +4,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author arunkumar 
  * 
  * The Class ReadProperty - Enables to read from properties file.
  */
 public class ReadProperty {
+
+	private static final Logger LOGGER = Logger.getLogger(ReadProperty.class);
 	
 	private Properties properties = null;
 	
@@ -29,7 +33,7 @@ public class ReadProperty {
 			properties.load(inputStream);
 		}
 		catch (IOException ioException) {
-			System.out.println("Properties file load failed - "+ ioException.getMessage());
+			LOGGER.fatal("Unable to load properties file - "+ioException.getMessage());
 		}
 	}
 	

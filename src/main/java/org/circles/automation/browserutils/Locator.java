@@ -1,5 +1,6 @@
 package org.circles.automation.browserutils;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
 /**
@@ -9,6 +10,7 @@ import org.openqa.selenium.By;
  *  
  */
 public class Locator {
+	private static final Logger LOGGER = Logger.getLogger(Locator.class);
 	
 	/** The locator type like xpath, css selector, id, name, class name, link text, partial link text, tag name */
 	private String locatorType;
@@ -56,6 +58,7 @@ public class Locator {
 		case "tagname":
 			return By.tagName(locatorValue);
 		default:
+			LOGGER.fatal("Locator type given does not have support - "+locatorType);
 			return null;
 		}
 	}

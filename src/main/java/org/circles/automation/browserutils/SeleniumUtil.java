@@ -2,6 +2,7 @@ package org.circles.automation.browserutils;
 
 import java.util.NoSuchElementException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,6 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * 
  */
 public class SeleniumUtil {
+
+	private static final Logger LOGGER = Logger.getLogger(SeleniumUtil.class);
 	
 	public WebDriver driver;
 	
@@ -38,7 +41,7 @@ public class SeleniumUtil {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator.getBy()));
 			return true;
 		} catch(Exception exception) {
-			exception.printStackTrace();
+			LOGGER.error("waitForElementToBeDisplayed - "+exception.getMessage());
 			return false;
 		}
 	}
@@ -53,10 +56,10 @@ public class SeleniumUtil {
 	public boolean waitForElementToBeClickable(Locator locator, int timeToWait) {
 		WebDriverWait wait = new WebDriverWait(driver, timeToWait);
 		try {
-			//wait.until(ExpectedConditions.elementToBeClickable(locator.getBy()));
+			wait.until(ExpectedConditions.elementToBeClickable(locator.getBy()));
 			return true;
 		} catch(Exception exception) {
-			exception.printStackTrace();
+			LOGGER.error("waitForElementToBeClickable - "+exception.getMessage());
 			return false;
 		}
 	}
@@ -74,6 +77,7 @@ public class SeleniumUtil {
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(locator.getBy()));
 			return true;
 		} catch(Exception exception) {
+			LOGGER.error("waitForElementToDisappear - "+exception.getMessage());
 			return false;
 		}
 	}
@@ -89,7 +93,7 @@ public class SeleniumUtil {
 		try {
 		driver.findElement(locator.getBy()).sendKeys(value);
 		} catch(NoSuchElementException noSuchElementException) {
-			noSuchElementException.printStackTrace();
+			LOGGER.error("enterText - "+noSuchElementException.getMessage());
 		}
 	}
 	

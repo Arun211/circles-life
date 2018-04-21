@@ -1,5 +1,6 @@
 package com.circles.automation.tests;
 
+import org.apache.log4j.Logger;
 import org.circles.automation.browserutils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -17,6 +18,7 @@ import com.circles.facebook.pages.FacebookUserHomePage;
  * The Class FacebookPostTests.
  */
 public class FacebookPostTests {
+	private static final Logger LOGGER = Logger.getLogger(FacebookPostTests.class);
 	
 	public WebDriver driver;
 	
@@ -76,7 +78,7 @@ public class FacebookPostTests {
 		try {
 			driver.quit();
 		} catch(Exception exception) {
-			
+			LOGGER.error("Exception while closing browser driver after test execution -"+exception.getMessage());
 		}
 	}
 	

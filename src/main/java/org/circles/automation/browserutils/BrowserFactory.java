@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
+import org.apache.log4j.Logger;
 import org.circles.automation.utils.ReadProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,6 +24,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
  * Supports creating Firefox, Chrome and Android driver.
  */
 public class BrowserFactory {
+	private static final Logger LOGGER = Logger.getLogger(BrowserFactory.class);
 	
 	private static ReadProperty readProperty;
 	private static String applicationName;
@@ -51,6 +53,7 @@ public class BrowserFactory {
 			case "googlechrome":
 				return createChromeDriver();
 			default:
+				LOGGER.error("Browser name '"+browserName+"' does not have support yet.");
 				return null;
 		}
 	}
@@ -68,6 +71,7 @@ public class BrowserFactory {
 		ChromeDriver driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.get(readProperty.getValue(BrowserFactory.applicationName));
+		LOGGER.info("Chrome driver object created; Driver path - "+readProperty.getValue("CHROME_DRIVER_PATH"));
 		return driver;
 	}
 	
@@ -85,6 +89,7 @@ public class BrowserFactory {
 		FirefoxDriver driver = new FirefoxDriver(firefoxOptions);
 		driver.manage().window().maximize();
 		driver.get(readProperty.getValue(BrowserFactory.applicationName));
+		LOGGER.info("Firefox driver object created; Driver path - "+readProperty.getValue("FIREFOX_DRIVER_PATH"));
 		return driver;
 	}
 	
@@ -107,8 +112,9 @@ public class BrowserFactory {
 		
 		try {
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			LOGGER.info("Android driver object created");
 		} catch(MalformedURLException malformedURLException) {
-			malformedURLException.printStackTrace();
+			LOGGER.fatal("MalformedURLException - "+malformedURLException.getMessage());
 		}
 		
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
