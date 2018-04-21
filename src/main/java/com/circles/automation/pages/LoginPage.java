@@ -4,20 +4,38 @@ import org.circles.automation.browserutils.Locator;
 import org.circles.automation.browserutils.SeleniumUtil;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * @author arunkumar
+ * 
+ * The Class LoginPage - Page Object Model class for Circles.life login page
+ * 
+ * Note - Comments for locator object is given in Locator object initialization
+ */
 public class LoginPage {
+	
 	private WebDriver driver;
 	private SeleniumUtil seleniumUtil;
 	
 	private Locator signinBlock = new Locator("xpath", "//span[text()='SIGN IN']", "Signin block");
-	private Locator emailAddress = new Locator("name", "email", "Email address field in signin page");
-	private Locator password = new Locator("name", "password", "Password field in signin page");
+	private Locator emailAddressField = new Locator("name", "email", "Email address field in signin page");
+	private Locator passwordField = new Locator("name", "password", "Password field in signin page");
 	private Locator signinButton = new Locator("xpath", "//button[text()='Sign In']", "Signin button in Sign In page");
 
+	/**
+	 * Instantiates a new login page.
+	 *
+	 * @param driver the driver
+	 */
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		seleniumUtil = new SeleniumUtil(driver);
 	}
 	
+	/**
+	 * Verify user is in sign in page.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean verifyUserIsInSigninPage() {
 		seleniumUtil.waitForElementToBeDisplayed(signinBlock, 10);
 		try {
@@ -27,12 +45,24 @@ public class LoginPage {
 		}
 	}
 	
-	public void loginToApplication() throws Exception {
-		seleniumUtil.enterText(emailAddress, "taskscircles.life@gmail.com");
-		seleniumUtil.enterText(password, "Seniorqa@");
+	/**
+	 * Login to application.
+	 *
+	 * @param username the username
+	 * @param password the password
+	 * @throws Exception the exception
+	 */
+	public void loginToApplication(String username, String password) throws Exception {
+		seleniumUtil.enterText(emailAddressField, username);
+		seleniumUtil.enterText(passwordField, password);
 		seleniumUtil.click(signinButton);
 	}
 	
+	/**
+	 * Verify sign in success.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean verifySigninSuccess() {
 		seleniumUtil.waitForElementToDisappear(signinBlock, 10);
 		try {

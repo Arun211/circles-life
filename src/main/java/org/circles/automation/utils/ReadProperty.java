@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ReadProperty.
+ * @author arunkumar 
+ * 
+ * The Class ReadProperty - Enables to read from properties file.
  */
 public class ReadProperty {
 	
-	/** The properties. */
 	private Properties properties = null;
 	
 	/**
