@@ -62,6 +62,13 @@ public class Locator {
 			return null;
 		}
 	}
+	
+	public Locator replace(String key, String value) {
+		System.out.println("Before - "+locatorValue);
+		locatorValue.replaceAll(key, value);
+		System.out.println("After - "+locatorValue);
+		return this;
+	}
 
 	/**
 	 * Gets the locator type.
