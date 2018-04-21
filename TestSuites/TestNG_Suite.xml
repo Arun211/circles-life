@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Suite" parallel="classes" thread-count="1">
+<suite name="Suite" parallel="classes" thread-count="1" preserve-order="true">
   <test name="Circles.life_Test">
     <classes>
       <class name="com.circles.automation.tests.CirclesEmailVerificationTests"/>
@@ -11,6 +11,12 @@
   <test name="FacebookPost_Test">
     <classes>
       <class name="com.circles.automation.tests.FacebookPostTests"/>
+    </classes>
+  </test>
+  
+  <test name="FacebookAppVerifyPost_Test">
+    <classes>
+      <class name="com.circles.automation.tests.FacebookAppPostVerifyTest"/>
     </classes>
   </test>
 </suite>
