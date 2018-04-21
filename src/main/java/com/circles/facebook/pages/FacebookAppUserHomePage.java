@@ -1,9 +1,10 @@
 package com.circles.facebook.pages;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 
 import org.circles.automation.browserutils.Locator;
+import org.circles.automation.browserutils.SeleniumAndroidUtil;
 
 /**
  * @author arunkumar
@@ -14,20 +15,20 @@ import org.circles.automation.browserutils.Locator;
  */
 public class FacebookAppUserHomePage {
 	
-	private AndroidDriver<MobileElement> driver;
+	private AppiumDriver<MobileElement> driver;
+	private SeleniumAndroidUtil seleniumAndroidUtil;
 	
-	private Locator profilePicture = new Locator("xpath", "//img[contains(@id,'profile_pic_header')]", "Profile picture in user home page");
-	private Locator composePostLabel = new Locator("xpath","//span[contains(text(),'Compose Post')]", "Compose post text");
-	private Locator postTextArea = new Locator("xpath","//div[@data-testid='status-attachment-mentions-input']//div[contains(@class,'_1mf')]/span", "Post text");
-	private Locator postButton = new Locator("xpath", "//button/span[text()='Post']", "Post button");
+	private Locator writePostSection = new Locator("xpath", "//android.view.ViewGroup[contains(@content-desc,'Write something here...')]", "Write post section");
+	private Locator postText = new Locator("xpath","//android.view.ViewGroup[contains(@content-desc,'${MESSAGE}')]", "Post text");
 	
 	/**
 	 * Instantiates a new facebook app user home page object.
 	 *
 	 * @param driver the driver
 	 */
-	public FacebookAppUserHomePage(AndroidDriver<MobileElement> driver) {
+	public FacebookAppUserHomePage(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
+		seleniumAndroidUtil = new SeleniumAndroidUtil(driver);
 	}
 	
 	/**
@@ -36,11 +37,7 @@ public class FacebookAppUserHomePage {
 	 * @return true, if user is logged in
 	 */
 	public boolean isUserLoggedIn() {
-		try {
-			return driver.findElement(profilePicture.getBy()).isDisplayed();
-		} catch(Exception exception) {
-			return false;
-		}
+		return seleniumAndroidUtil.isElementDisplayed(writePostSection);
 	}
 	
 	/**
@@ -50,7 +47,7 @@ public class FacebookAppUserHomePage {
 	 * @throws Exception the exception
 	 */
 	public boolean verifyPost(String messageToVerify) throws Exception {
-		
-		return false;
+		Locator locator = postText.replace("${MESSAGE}", messageToVerify);
+		return seleniumAndroidUtil.isElementDisplayed(locator);
 	}
 }
