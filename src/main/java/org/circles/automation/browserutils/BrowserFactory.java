@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -98,7 +99,7 @@ public class BrowserFactory {
 	 *
 	 * @return the Android webdriver
 	 */
-	public static AndroidDriver<MobileElement> createAndroidDriver() {
+	public static AppiumDriver<MobileElement> createAndroidDriver() {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("automationName","Appium");
 		capabilities.setCapability("deviceName", "Nothing Found");
@@ -108,7 +109,7 @@ public class BrowserFactory {
 		capabilities.setCapability("appPackage", "com.facebook.katana");
 		capabilities.setCapability("appActivity", "com.facebook.katana.LoginActivity");
 		
-		AndroidDriver<MobileElement> driver = null;
+		AppiumDriver<MobileElement> driver = null;
 		
 		try {
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
