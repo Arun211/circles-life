@@ -1,11 +1,11 @@
-### circles-life
-Test tasks repository to hold source for below scenarios
+### Code Samples
+Repository to hold implementation for below scenarios
 
-4. Write the script to Login in to Circles.life website. Verify your email address under My account.
+1. Write the script to Login in to website. Verify your email address under My account.
 
-5. Write a script to login into Facebook account (test account) from website. And Post a test comment.
+2. Write a script to login into Facebook account (test account) from website. And Post a test comment.
 
-6. Now, write a script to check the same posted comment by logging into Facebook App. And verify the same comment is posted or not.
+3. Now, write a script to check the same posted comment by logging into Facebook App. And verify the same comment is posted or not.
 
 
 ### Execution
