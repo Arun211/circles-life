@@ -1,12 +1,12 @@
-package com.circles.facebook.pages;
+package com.sample.facebook.pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 import java.util.List;
 
-import org.circles.automation.browserutils.Locator;
-import org.circles.automation.browserutils.SeleniumAndroidUtil;
+import org.sample.automation.browserutils.Locator;
+import org.sample.automation.browserutils.SeleniumAndroidUtil;
 
 /**
  * @author arunkumar

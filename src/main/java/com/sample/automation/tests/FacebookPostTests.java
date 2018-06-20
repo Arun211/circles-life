@@ -1,16 +1,16 @@
-package com.circles.automation.tests;
+package com.sample.automation.tests;
 
 import org.apache.log4j.Logger;
-import org.circles.automation.browserutils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
+import org.sample.automation.browserutils.BrowserFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.circles.facebook.pages.FacebookLoginPage;
-import com.circles.facebook.pages.FacebookUserHomePage;
+import com.sample.facebook.pages.FacebookLoginPage;
+import com.sample.facebook.pages.FacebookUserHomePage;
 
 /**
  * @author arunkumar

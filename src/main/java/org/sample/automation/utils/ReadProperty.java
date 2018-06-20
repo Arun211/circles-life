@@ -1,4 +1,4 @@
-package org.circles.automation.utils;
+package org.sample.automation.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

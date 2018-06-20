@@ -1,9 +1,9 @@
-package com.circles.automation.pages;
+package org.sample.automation.pages;
 
 import org.apache.log4j.Logger;
-import org.circles.automation.browserutils.Locator;
-import org.circles.automation.browserutils.SeleniumUtil;
 import org.openqa.selenium.WebDriver;
+import org.sample.automation.browserutils.Locator;
+import org.sample.automation.browserutils.SeleniumUtil;
 
 /**
  * @author arunkumar

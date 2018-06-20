@@ -1,18 +1,18 @@
-package com.circles.automation.tests;
+package com.sample.automation.tests;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 import org.apache.log4j.Logger;
-import org.circles.automation.browserutils.BrowserFactory;
+import org.sample.automation.browserutils.BrowserFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.circles.facebook.pages.FacebookAppLoginPage;
-import com.circles.facebook.pages.FacebookAppUserHomePage;
+import com.sample.facebook.pages.FacebookAppLoginPage;
+import com.sample.facebook.pages.FacebookAppUserHomePage;
 
 public class FacebookAppPostVerifyTest {
 	private static final Logger LOGGER = Logger.getLogger(FacebookAppPostVerifyTest.class);

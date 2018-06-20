@@ -1,4 +1,4 @@
-package org.circles.automation.browserutils;
+package org.sample.automation.browserutils;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;

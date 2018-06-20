@@ -1,4 +1,4 @@
-package org.circles.automation.browserutils;
+package org.sample.automation.browserutils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

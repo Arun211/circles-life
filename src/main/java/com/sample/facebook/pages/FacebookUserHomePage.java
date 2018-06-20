@@ -1,10 +1,10 @@
-package com.circles.facebook.pages;
+package com.sample.facebook.pages;
 
-import org.circles.automation.browserutils.Locator;
-import org.circles.automation.browserutils.SeleniumUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.sample.automation.browserutils.Locator;
+import org.sample.automation.browserutils.SeleniumUtil;
 
 /**
  * @author arunkumar

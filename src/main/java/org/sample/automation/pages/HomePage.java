@@ -1,7 +1,7 @@
-package com.circles.automation.pages;
+package org.sample.automation.pages;
 
-import org.circles.automation.browserutils.Locator;
 import org.openqa.selenium.WebDriver;
+import org.sample.automation.browserutils.Locator;
 
 /**
  * @author arunkumar

@@ -1,17 +1,16 @@
-package com.circles.automation.tests;
+package com.sample.automation.tests;
 
 import org.apache.log4j.Logger;
-import org.circles.automation.browserutils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
+import org.sample.automation.browserutils.BrowserFactory;
+import org.sample.automation.pages.HomePage;
+import org.sample.automation.pages.LoginPage;
+import org.sample.automation.pages.UserHomePage;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.circles.automation.pages.HomePage;
-import com.circles.automation.pages.LoginPage;
-import com.circles.automation.pages.UserHomePage;
 
 /**
  * @author arunkumar

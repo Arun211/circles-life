@@ -1,4 +1,4 @@
-package org.circles.automation.browserutils;
+package org.sample.automation.browserutils;
 
 import java.util.NoSuchElementException;
 

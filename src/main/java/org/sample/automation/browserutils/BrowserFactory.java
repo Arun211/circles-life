@@ -1,4 +1,4 @@
-package org.circles.automation.browserutils;
+package org.sample.automation.browserutils;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -9,13 +9,13 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 import org.apache.log4j.Logger;
-import org.circles.automation.utils.ReadProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.sample.automation.utils.ReadProperty;
 
 /**
  * @author arunkumar
