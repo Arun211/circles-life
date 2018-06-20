@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>circles-life</groupId>
-	<artifactId>circles-life</artifactId>
+	<groupId>test-automation-framework</groupId>
+	<artifactId>test-automation-framework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>circles-life-task</name>
-	<description>circles life task</description>
+	<name>test-automation-framework</name>
+	<description>test-automation-framework Sample</description>
 
 	<dependencies>
 		<dependency>
@@ -48,7 +48,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>TestSuites/TestNG_Suite.xml</suiteXmlFile>
+						<suiteXmlFile>TestSuites/Sample_TestNG_Suite.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

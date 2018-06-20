@@ -1,4 +1,4 @@
-package com.sample.automation.tests;
+package org.sample.automation.tests;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

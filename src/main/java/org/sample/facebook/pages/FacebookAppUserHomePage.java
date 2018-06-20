@@ -1,4 +1,4 @@
-package com.sample.facebook.pages;
+package org.sample.facebook.pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

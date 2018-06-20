@@ -14,7 +14,7 @@ public class HomePage {
 	
 	private WebDriver driver;
 	
-	private Locator buyLink = new Locator("linktext", "Buy", "Login link");
+	private Locator buyLink = new Locator("linktext", "Buy now", "Login link");
 	
 	/**
 	 * Instantiates a new home page.

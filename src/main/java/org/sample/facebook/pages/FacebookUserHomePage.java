@@ -1,4 +1,4 @@
-package com.sample.facebook.pages;
+package org.sample.facebook.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

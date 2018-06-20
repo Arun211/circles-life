@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" parallel="classes" thread-count="1" preserve-order="true">
+  <test name="Sample_Test">
+    <classes>
+      <class name="org.sample.automation.tests.CirclesEmailVerificationTests"/>
+    </classes>
+  </test>
+
+</suite>

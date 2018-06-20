@@ -4,19 +4,19 @@
 <suite name="Suite" parallel="classes" thread-count="1" preserve-order="true">
   <test name="Circles.life_Test">
     <classes>
-      <class name="com.sample.automation.tests.CirclesEmailVerificationTests"/>
+      <class name="org.sample.automation.tests.CirclesEmailVerificationTests"/>
     </classes>
   </test>
   
   <test name="FacebookPost_Test">
     <classes>
-      <class name="com.sample.automation.tests.FacebookPostTests"/>
+      <class name="org.sample.automation.tests.FacebookPostTests"/>
     </classes>
   </test>
   
   <test name="FacebookAppVerifyPost_Test">
     <classes>
-      <class name="com.sample.automation.tests.FacebookAppPostVerifyTest"/>
+      <class name="org.sample.automation.tests.FacebookAppPostVerifyTest"/>
     </classes>
   </test>
 </suite>
